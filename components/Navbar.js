@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export default function Navbar() {
   const [theme, setTheme] = useState("light"); // Default to "light" initially
   const [isMounted, setIsMounted] = useState(false); // Ensure the component is mounted
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     // Ensure this runs only on the client side
@@ -21,6 +22,10 @@ export default function Navbar() {
     document.documentElement.setAttribute("data-theme", newTheme);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   if (!isMounted) {
     // Prevent rendering until the component is mounted
     return null;
@@ -28,15 +33,17 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#contact" className="hire-button">Hire Me</a></li>
-      </ul>
+      <div className="navbar-container">
+        <a href="#hero" className="logo">MyPortfolio</a>
+        <ul className="navbar-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" className="hire-button">Hire Me</a></li>
+        </ul>
+      </div>
     </nav>
   );
 }

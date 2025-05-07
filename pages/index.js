@@ -6,7 +6,7 @@ import Research from '../components/sections/Research';
 import Contact from '../components/sections/Contact';
 import Image from 'next/image';
 
-export default function Home() {
+export default function Hero() {
   return (
     <div>
       
