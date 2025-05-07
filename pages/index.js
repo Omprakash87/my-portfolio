@@ -1,4 +1,4 @@
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar'; // Adjust the path based on the file structure
 import Skills from '../components/sections/Skills';
 import Experience from '../components/sections/Experience';
 import Projects from '../components/sections/Projects';
@@ -9,7 +9,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      
 
       {/* Hero Section */}
       <section id="hero" className="hero">
