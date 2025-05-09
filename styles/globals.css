@@ -189,6 +189,24 @@ button:hover, .cta:hover, .hire-button:hover {
     transform: scale(1);
   }
 }
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply Animation to Sections */
+.section {
+  animation: fadeIn 1s ease-in-out;
+}
+
 /* 🌟 Navbar Styling */
 .navbar {
   display: flex;
@@ -238,30 +256,6 @@ button:hover, .cta:hover, .hire-button:hover {
   color: #ffd700; /* Gold color on hover */
 }
 
-.hire-button {
-  background-color: #ffd700;
-  color: #0056b3;
-  padding: 8px 15px;
-  border-radius: 5px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.hire-button:hover {
-  background-color: #ffcc00;
-  color: white;
-}
-
-.theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: white;
-  cursor: pointer;
-  margin-left: 20px;
-}
-
 .hamburger {
   display: none;
   font-size: 1.5rem;
@@ -271,21 +265,22 @@ button:hover, .cta:hover, .hire-button:hover {
   cursor: pointer;
 }
 
+.navbar-links.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: var(--navbar-bg);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
 @media (max-width: 768px) {
   .navbar-links {
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: var(--navbar-bg);
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar-links.active {
-    display: flex;
   }
 
   .hamburger {
@@ -586,6 +581,7 @@ button:hover, .cta:hover, .hire-button:hover {
     transform: translateX(0);
   }
 }
+
 /* 🌟 Contact Section */
 .contact {
   padding: 100px 10%;
@@ -838,18 +834,6 @@ html {
   color: #007acc; /* Lighter blue on hover */
 }
 
-/* 🌟 Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Responsive Design for Tablets and Mobile */
 @media (max-width: 768px) {
   .section {
@@ -864,6 +848,15 @@ html {
   p {
     font-size: 1rem;
     text-align: center;
+  }
+
+  .skills-grid, .certificates-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  .skill-box, .certificate-card {
+    padding: 15px;
+    font-size: 0.9rem;
   }
 }
 
