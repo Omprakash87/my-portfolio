@@ -1,15 +1,10 @@
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  const [theme, setTheme] = useState("light"); // Default to "light" initially
-  const [isMounted, setIsMounted] = useState(false); // Ensure the component is mounted
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    // Ensure this runs only on the client side
-    setIsMounted(true);
-
-    // Get the saved theme from localStorage
+    // Get the saved theme from localStorage or default to light
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
     document.documentElement.setAttribute("data-theme", savedTheme);
@@ -22,15 +17,6 @@ export default function Navbar() {
     document.documentElement.setAttribute("data-theme", newTheme);
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  if (!isMounted) {
-    // Prevent rendering until the component is mounted
-    return null;
-  }
-
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -38,11 +24,14 @@ export default function Navbar() {
         <ul className="navbar-links">
           <li><a href="#hero">Home</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#certificates">Certificates</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact" className="hire-button">Hire Me</a></li>
         </ul>
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+        </button>
       </div>
     </nav>
   );
