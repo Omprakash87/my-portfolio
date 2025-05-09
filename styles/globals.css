@@ -230,8 +230,8 @@ button:hover, .cta:hover, .hire-button:hover {
   justify-content: center;
   align-items: center;
   padding: 15px 20px;
-  background: linear-gradient(90deg, var(--navbar-bg), var(--hover-bg));
-  color: white;
+  background-color: var(--navbar-bg); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -249,8 +249,9 @@ button:hover, .cta:hover, .hire-button:hover {
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: white;
+  color: var(--text-color); /* Use theme variable */
   text-decoration: none;
+  transition: color 0.3s ease; /* Smooth transition for theme change */
 }
 
 .navbar-links {
@@ -262,7 +263,7 @@ button:hover, .cta:hover, .hire-button:hover {
 }
 
 .navbar-links li a {
-  color: white;
+  color: var(--text-color); /* Use theme variable */
   text-decoration: none;
   font-size: 1rem;
   font-weight: bold;
@@ -270,7 +271,7 @@ button:hover, .cta:hover, .hire-button:hover {
 }
 
 .navbar-links li a:hover {
-  color: #ffd700; /* Gold color on hover */
+  color: var(--link-hover-color); /* Use theme variable */
 }
 
 .hamburger {
@@ -278,7 +279,7 @@ button:hover, .cta:hover, .hire-button:hover {
   font-size: 1.5rem;
   background: none;
   border: none;
-  color: white;
+  color: var(--text-color); /* Use theme variable */
   cursor: pointer;
 }
 
@@ -288,7 +289,7 @@ button:hover, .cta:hover, .hire-button:hover {
   position: absolute;
   top: 60px;
   right: 20px;
-  background-color: var(--navbar-bg);
+  background-color: var(--navbar-bg); /* Use theme variable */
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
