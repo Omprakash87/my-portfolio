@@ -27,28 +27,32 @@ body {
 /* 🌟 Theme Variables */
 /* Default Theme (Light) */
 :root {
-  --background-color: #ffffff;
-  --text-color: #2c3e50;
-  --navbar-bg: #0056b3;
-  --button-bg: #ffd700;
-  --button-text: #0056b3;
-  --card-bg: #ffffff;
-  --card-border: #ddd;
-  --hover-bg: #0056b3;
-  --hover-text: #ffffff;
+  --background-color: #f9f9f9; /* Soft light gray */
+  --text-color: #2c3e50; /* Dark slate blue */
+  --navbar-bg: #ffffff; /* White navbar */
+  --button-bg: #0077b6; /* Vibrant blue */
+  --button-text: #ffffff; /* White button text */
+  --card-bg: #ffffff; /* White card background */
+  --card-border: #ddd; /* Subtle border */
+  --hover-bg: #0056b3; /* Darker blue for hover */
+  --hover-text: #ffffff; /* White text on hover */
+  --link-color: #0077b6; /* Vibrant blue for links */
+  --link-hover-color: #0056b3; /* Darker blue for link hover */
 }
 
 /* Dark Theme */
 [data-theme="dark"] {
-  --background-color: #2c3e50;
-  --text-color: #ffffff;
-  --navbar-bg: #1a1a1a;
-  --button-bg: #ffcc00;
-  --button-text: #1a1a1a;
-  --card-bg: #1a1a1a;
-  --card-border: #444;
-  --hover-bg: #ffcc00;
-  --hover-text: #1a1a1a;
+  --background-color: #1a1a1a; /* Dark gray */
+  --text-color: #e0e0e0; /* Light gray text */
+  --navbar-bg: #2c2c2c; /* Darker gray navbar */
+  --button-bg: #ffcc00; /* Vibrant yellow */
+  --button-text: #1a1a1a; /* Dark text for buttons */
+  --card-bg: #2c2c2c; /* Dark gray card background */
+  --card-border: #444; /* Subtle dark border */
+  --hover-bg: #ffdd33; /* Lighter yellow for hover */
+  --hover-text: #1a1a1a; /* Dark text on hover */
+  --link-color: #ffcc00; /* Vibrant yellow for links */
+  --link-hover-color: #ffdd33; /* Lighter yellow for link hover */
 }
 
 /* 🌟 Apply Theme Variables */
@@ -74,11 +78,13 @@ body {
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--secondary-color);
+  color: var(--link-hover-color);
 }
 
 button, .cta, .hire-button {
@@ -88,12 +94,13 @@ button, .cta, .hire-button {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover, .cta:hover, .hire-button:hover {
   background-color: var(--hover-bg);
   color: var(--hover-text);
+  transform: scale(1.05); /* Slight zoom effect */
 }
 
 /* 🌟 Hero Section Styling */
@@ -104,7 +111,11 @@ button:hover, .cta:hover, .hire-button:hover {
   justify-content: center;
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(135deg, #eaf2f8, #ffffff); /* Light gradient */
+  background: linear-gradient(135deg, var(--background-color), #eaf2f8); /* Light gradient for light theme */
+}
+
+[data-theme="dark"] .hero {
+  background: linear-gradient(135deg, var(--background-color), #2c2c2c); /* Dark gradient for dark theme */
 }
 
 .hero-content {
@@ -213,7 +224,7 @@ button:hover, .cta:hover, .hire-button:hover {
   justify-content: center;
   align-items: center;
   padding: 15px 20px;
-  background-color: var(--navbar-bg);
+  background: linear-gradient(90deg, var(--navbar-bg), var(--hover-bg));
   color: white;
   position: sticky;
   top: 0;
@@ -291,74 +302,50 @@ button:hover, .cta:hover, .hire-button:hover {
 .skills {
   text-align: center;
   padding: 60px 20px;
-  background-color: #f9f9f9; /* Light background for contrast */
+  background-color: var(--background-color); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
 }
 
 .skills h2 {
   font-size: 2.5rem;
-  color: #0056b3; /* Blue heading */
+  color: var(--text-color); /* Use theme variable */
   margin-bottom: 20px;
 }
 
 .skills-grid {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping for responsive design */
-  justify-content: center; /* Center the skill boxes */
-  gap: 20px; /* Spacing between skill boxes */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   max-width: 1200px;
-  margin: 0 auto; /* Center the grid */
+  margin: 0 auto;
 }
 
 .skill-box {
-  background: #ffffff; /* White background */
-  color: #2c3e50; /* Dark slate text */
-  padding: 15px 20px; /* Adjust padding for consistent spacing */
-  border: 1px solid #ddd; /* Subtle border */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background: var(--card-bg); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
+  padding: 15px 20px;
+  border: 1px solid var(--card-border); /* Use theme variable */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
   transition: all 0.3s ease;
-  flex: 1 1 calc(33.333% - 20px); /* Flexible width for responsiveness */
-  max-width: 300px; /* Prevent boxes from becoming too wide */
-  min-width: 200px; /* Prevent boxes from becoming too narrow */
 }
 
 .skill-box:hover {
-  background: #0056b3; /* Blue background on hover */
-  color: white; /* White text on hover */
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-
-@media (max-width: 768px) {
-  .skills h2 {
-    font-size: 2rem; /* Adjust heading size */
-  }
-
-  .skills-grid {
-    gap: 15px; /* Reduce spacing for smaller screens */
-  }
-
-  .skill-box {
-    flex: 1 1 calc(50% - 15px); /* Adjust width for smaller screens */
-    font-size: 0.9rem; /* Adjust font size */
-    padding: 10px 15px; /* Reduce padding */
-  }
-}
-
-@media (max-width: 480px) {
-  .skill-box {
-    flex: 1 1 calc(100% - 10px); /* Full width for very small screens */
-    font-size: 0.8rem; /* Further adjust font size */
-    padding: 8px 10px; /* Further reduce padding */
-  }
+  background: var(--hover-bg); /* Use theme variable */
+  color: var(--hover-text); /* Use theme variable */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 /* 🌟 Projects Section */
 .projects {
   text-align: center;
   padding: 60px 20px;
+  background-color: var(--background-color); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
 }
 
 .section-title {
@@ -374,16 +361,20 @@ button:hover, .cta:hover, .hire-button:hover {
 }
 
 .project-card {
-  background: #ffffff; /* White card background */
+  background: var(--card-bg); /* Use theme variable */
+  border: 1px solid var(--card-border); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
+  background: var(--hover-bg); /* Use theme variable */
+  color: var(--hover-text); /* Use theme variable */
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .project-card h3 {
@@ -459,23 +450,24 @@ button:hover, .cta:hover, .hire-button:hover {
 /* 🌟 Contact Section */
 .contact {
   padding: 100px 10%;
-  background: linear-gradient(135deg, #ffffff, #f0f4f8); /* White to soft blue-gray gradient */
-  color: #2c3e50; /* Dark slate blue text */
+  background-color: var(--background-color); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
+  text-align: center;
+  transition: all 0.5s ease-in-out;
 }
 
 .contact h2 {
   font-size: 2.8rem;
-  color: #0056b3; /* Primary blue */
+  color: var(--text-color); /* Use theme variable */
+  margin-bottom: 20px;
 }
 
 .contact p {
   font-size: 1.2rem;
-  opacity: 0.8;
-  margin-top: 10px;
-  animation: fadeIn 1s forwards 0.3s;
+  color: var(--text-color); /* Use theme variable */
+  margin-bottom: 20px;
 }
 
-/* Contact Form */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -485,29 +477,27 @@ button:hover, .cta:hover, .hire-button:hover {
 }
 
 .contact-form input, .contact-form textarea {
+  background: var(--card-bg); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
+  border: 1px solid var(--card-border); /* Use theme variable */
   width: 100%;
   padding: 12px;
   margin: 8px 0;
   border-radius: 5px;
-  border: 1px solid #0056b3; /* Blue border */
-  background: #ffffff; /* White input fields */
-  color: #2c3e50; /* Dark slate blue text */
-  font-size: 1rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
 }
 
 .contact-form input:hover, .contact-form textarea:hover {
-  background: #eaf2f8; /* Light blue on hover */
+  background: #eaf2f8; /* Light blue for hover effect */
 }
 
 .contact-form textarea {
   height: 150px;
 }
 
-/* Contact Button */
 .contact-form button {
-  background: #0056b3; /* Blue button */
-  color: white;
+  background: var(--button-bg); /* Use theme variable */
+  color: var(--button-text); /* Use theme variable */
   padding: 12px;
   border-radius: 5px;
   font-weight: bold;
@@ -516,7 +506,8 @@ button:hover, .cta:hover, .hire-button:hover {
 }
 
 .contact-form button:hover {
-  background: #007acc; /* Lighter blue on hover */
+  background: var(--hover-bg); /* Use theme variable */
+  color: var(--hover-text); /* Use theme variable */
   transform: scale(1.1);
 }
 
@@ -526,42 +517,26 @@ button:hover, .cta:hover, .hire-button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #ffffff, #eaf2f8); /* White to light blue gradient */
-  color: #2c3e50; /* Dark slate blue text */
+  background-color: var(--background-color); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
   gap: 50px;
   flex-wrap: wrap;
   text-align: left;
   transition: all 0.5s ease-in-out;
 }
 
-.about:hover {
-  transform: scale(1.02);
-}
-
-/* About Text */
-.about-text {
-  max-width: 600px;
-}
-
 .about h2 {
   font-size: 2.8rem;
-  color: #0056b3; /* Primary blue for headings */
+  color: var(--text-color); /* Use theme variable */
   margin-bottom: 15px;
-  opacity: 0;
-  transform: translateX(-50px);
-  animation: slideIn 1s forwards;
 }
 
 .about p {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #7f8c8d; /* Neutral gray for descriptions */
-  opacity: 0;
-  transform: translateX(-50px);
-  animation: slideIn 1s forwards 0.3s;
+  color: var(--text-color); /* Use theme variable */
 }
 
-/* About Image */
 .about-image img {
   width: 100%;
   max-width: 500px;
@@ -621,15 +596,13 @@ button:hover, .cta:hover, .hire-button:hover {
 }
 
 .contact-form input, .contact-form textarea {
+  background: var(--card-bg); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
+  border: 1px solid var(--card-border); /* Use theme variable */
   width: 100%;
   padding: 12px;
   margin: 8px 0;
   border-radius: 5px;
-  border: 1px solid #0056b3; /* Blue border */
-  background: #ffffff; /* White input fields */
-  color: #2c3e50; /* Dark slate blue text */
-  font-size: 1rem;
-  transition: all 0.3s ease-in-out;
 }
 
 .contact-form input:hover, .contact-form textarea:hover {
@@ -642,8 +615,8 @@ button:hover, .cta:hover, .hire-button:hover {
 
 /* Contact Button */
 .contact-form button {
-  background: #0056b3; /* Blue button */
-  color: white;
+  background: var(--button-bg); /* Use theme variable */
+  color: var(--button-text); /* Use theme variable */
   padding: 12px;
   border-radius: 5px;
   font-weight: bold;
@@ -652,7 +625,8 @@ button:hover, .cta:hover, .hire-button:hover {
 }
 
 .contact-form button:hover {
-  background: #007acc; /* Lighter blue on hover */
+  background: var(--hover-bg); /* Use theme variable */
+  color: var(--hover-text); /* Use theme variable */
   transform: scale(1.1);
 }
 
@@ -707,14 +681,14 @@ html {
 /* 🌟 Experience Section */
 .experience {
   padding: 100px 10%;
-  background: linear-gradient(135deg, #ffffff, #eaf2f8); /* White to light blue gradient */
+  background-color: var(--background-color); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
   text-align: center;
-  color: #2c3e50; /* Dark slate blue for text */
 }
 
 .experience h2 {
   font-size: 2.8rem;
-  color: #0056b3; /* Primary blue */
+  color: var(--text-color); /* Use theme variable */
 }
 
 .experience-container {
@@ -726,18 +700,20 @@ html {
 }
 
 .experience-item {
-  background: #ffffff; /* White card background */
+  background: var(--card-bg); /* Use theme variable */
+  border: 1px solid var(--card-border); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   transition: all 0.3s ease-in-out;
 }
 
 .experience-item:hover {
-  background: #eaf2f8; /* Light blue on hover */
-  color: #0056b3; /* Blue text on hover */
+  background: var(--hover-bg); /* Use theme variable */
+  color: var(--hover-text); /* Use theme variable */
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .company-logo {
@@ -765,73 +741,40 @@ html {
 /* 🌟 Research Section */
 .research {
   padding: 100px 10%;
-  background: linear-gradient(135deg, #eaf2f8, #ffffff); /* Light blue to white gradient */
-  color: #2c3e50; /* Dark slate blue text */
+  background-color: var(--background-color); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
   text-align: center;
 }
 
 .research h2 {
   font-size: 2.8rem;
-  color: #0056b3; /* Primary blue */
+  color: var(--text-color); /* Use theme variable */
   margin-bottom: 30px;
-  opacity: 0;
-  transform: translateY(-30px);
-  animation: fadeIn 1s forwards;
 }
 
 .research-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-  gap: 30px; /* Consistent spacing between cards */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
   justify-content: center;
   margin-top: 30px;
 }
 
 .research-item {
-  background: #ffffff; /* White card background */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background: var(--card-bg); /* Use theme variable */
+  border: 1px solid var(--card-border); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
   padding: 20px;
-  text-align: left;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%; /* Ensure consistent height for all cards */
 }
 
 .research-item:hover {
-  background: #eaf2f8; /* Light blue on hover */
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
-  color: #0056b3; /* Blue text on hover */
-}
-
-.research-item h3 {
-  font-size: 1.5rem;
-  color: #2c3e50; /* Dark slate blue for titles */
-  margin-bottom: 10px;
-}
-
-.research-item p {
-  font-size: 1rem;
-  color: #7f8c8d; /* Neutral gray for descriptions */
-  margin-bottom: 20px;
-  line-height: 1.6; /* Improve readability */
-}
-
-.research-item a {
-  font-size: 1rem;
-  color: #0056b3; /* Primary blue for links */
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: auto; /* Push link to the bottom */
-  display: inline-block;
-  transition: color 0.3s ease;
-}
-
-.research-item a:hover {
-  color: #007acc; /* Lighter blue on hover */
+  background: var(--hover-bg); /* Use theme variable */
+  color: var(--hover-text); /* Use theme variable */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive Design for Tablets and Mobile */
@@ -873,69 +816,44 @@ html {
 .certificates {
   text-align: center;
   padding: 60px 20px;
-  background-color: #f0f8ff; /* Light blue background for contrast */
+  background-color: var(--background-color); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
 }
 
 .certificates h2 {
   font-size: 2.5rem;
-  color: #0056b3; /* Blue heading */
+  color: var(--text-color); /* Use theme variable */
   margin-bottom: 20px;
 }
 
-.certificates-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-  gap: 20px; /* Spacing between certificate cards */
-  max-width: 1200px;
-  margin: 0 auto; /* Center the grid */
-}
-
 .certificate-card {
-  background: #ffffff; /* White background */
-  color: #2c3e50; /* Dark slate text */
+  background: var(--card-bg); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
   padding: 20px;
-  border: 1px solid #ddd; /* Subtle border */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid var(--card-border); /* Use theme variable */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: all 0.3s ease;
 }
 
 .certificate-card:hover {
-  background: #0056b3; /* Blue background on hover */
-  color: white; /* White text on hover */
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  background: var(--hover-bg); /* Use theme variable */
+  color: var(--hover-text); /* Use theme variable */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.certificate-card a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #ffd700; /* Gold color for links */
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+/* Smooth Theme Transition */
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.certificate-card a:hover {
-  color: #ffcc00; /* Slightly darker gold on hover */
+button, .cta, .hire-button {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
-@media (max-width: 768px) {
-  .certificates h2 {
-    font-size: 2rem; /* Adjust heading size */
-  }
-
-  .certificates-grid {
-    gap: 15px; /* Reduce spacing for smaller screens */
-  }
-
-  .certificate-card {
-    padding: 15px;
-  }
-
-  .certificate-image {
-    max-width: 150px;
-  }
+.card, .certificate-card, .skill-box {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
