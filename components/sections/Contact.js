@@ -17,17 +17,24 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Sending...');
+    console.log('Sending form data:', formData); // Debugging: Log form data
 
     try {
-      await emailjs.send(
+      const response = await emailjs.send(
         'service_c55y2xv', // Replace with your EmailJS Service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS Template ID
-        formData,
+        'template_ilv3zof', // Replace with your EmailJS Template ID
+        {
+          name: formData.name, // Ensure these match your EmailJS template placeholders
+          email: formData.email,
+          message: formData.message,
+        },
         'JnWLPwgkyhgWGsXFm' // Replace with your EmailJS Public Key
       );
+      console.log('EmailJS response:', response); // Debugging: Log response
       setStatus('Message Sent Successfully!');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
+      console.error('EmailJS error:', error); // Debugging: Log error
       setStatus('Failed to send message. Please try again.');
     }
   };
@@ -41,7 +48,7 @@ export default function Contact() {
         <input
           type="text"
           name="name"
-          placeholder="Omprakash indla"
+          placeholder="your name"
           value={formData.name}
           onChange={handleChange}
           required
@@ -49,7 +56,7 @@ export default function Contact() {
         <input
           type="email"
           name="email"
-          placeholder="Omprakashindla54@gmail.com"
+          placeholder="youremail@example.com"
           value={formData.email}
           onChange={handleChange}
           required

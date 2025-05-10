@@ -36,6 +36,7 @@ export default function Navbar() {
           <li><a href="#certificates" onClick={() => setIsMenuOpen(false)}>Certificates</a></li>
           <li><a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a></li>
           <li><a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a></li>
+          <li><a href="#research" onClick={() => setIsMenuOpen(false)}>My Research</a></li> {/* Added My Research */}
           <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
         </ul>
         <button className="theme-toggle" onClick={toggleTheme}>
