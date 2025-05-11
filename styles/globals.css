@@ -35,7 +35,7 @@ body {
   --card-bg: #ffffff; /* White card background */
   --card-border: #ddd; /* Subtle border */
   --hover-bg: #0056b3; /* Darker blue for hover */
-  --hover-text: #0077b6; /* Vibrant blue for hover */
+  --hover-text: #eaf0f3; /* Vibrant blue for hover */
   --link-color: #0077b6; /* Vibrant blue for links */
   --link-hover-color: #0056b3; /* Darker blue for link hover */
 }
@@ -50,9 +50,9 @@ body {
   --card-bg: #2c2c2c; /* Dark gray card background */
   --card-border: #444; /* Subtle dark border */
   --hover-bg: #ffdd33; /* Lighter yellow for hover */
-  --hover-text: #ffcc00; /* Vibrant yellow for hover */
+  --hover-text: hsl(55, 65%, 3%); /* Vibrant yellow for hover */
   --link-color: #ffcc00; /* Vibrant yellow for links */
-  --link-hover-color: #ffdd33; /* Lighter yellow for link hover */
+  --link-hover-color: #ecbc0f; /* Lighter yellow for link hover */
 }
 
 /* 🌟 Apply Theme Variables */
