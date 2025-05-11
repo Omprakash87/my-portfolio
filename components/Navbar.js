@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [theme, setTheme] = useState("light");
@@ -25,7 +25,9 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <a href="#hero" className="logo">MyPortfolio</a>
+        <a href="#hero" className="logo">
+          <img src="/logo.png" alt="Logo" className="logo-image" />
+        </a>
         <button className="hamburger" onClick={toggleMenu} aria-label="Toggle navigation">
           ☰
         </button>
