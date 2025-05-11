@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 
 export default function Contact() {
@@ -9,6 +9,13 @@ export default function Contact() {
   });
 
   const [status, setStatus] = useState('');
+  const [theme, setTheme] = useState('light'); // Define theme state
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -37,6 +44,13 @@ export default function Contact() {
       console.error('EmailJS error:', error); // Debugging: Log error
       setStatus('Failed to send message. Please try again.');
     }
+  };
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
   };
 
   return (

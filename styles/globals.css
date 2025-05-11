@@ -104,12 +104,12 @@ button:hover, .cta:hover, .hire-button:hover {
 
 /* 🌟 Hero Section Styling */
 .hero {
-  display: flex; /* Use flexbox for alignment */
-  flex-direction: column; /* Stack content vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh; /* Full viewport height */
-  background-color: var(--background-color); /* Use theme variable */
+  background: linear-gradient(135deg, #0077b6, #00a8e8); /* Blue gradient background */
   color: var(--text-color); /* Use theme variable */
   text-align: center;
   padding: 80px 20px;
@@ -117,24 +117,50 @@ button:hover, .cta:hover, .hire-button:hover {
 }
 
 .hero-content {
-  max-width: 800px;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  gap: 40px; /* Add spacing between text and image */
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left; /* Align text to the left for better readability */
 }
 
 .hero h1 {
-  color: var(--text-color); /* Use theme variable */
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffffff; /* White text */
   margin-bottom: 10px;
 }
 
+.hero h1 .highlight {
+  color: #ffcc00; /* Vibrant yellow for emphasis */
+}
+
 .hero p {
-  color: var(--text-color); /* Use theme variable */
   font-size: 1.2rem;
+  color: #e0e0e0; /* Light gray text */
   margin-bottom: 20px;
+  line-height: 1.6; /* Improve readability */
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #d1d1d1; /* Softer gray for description */
+  margin-bottom: 30px;
 }
 
 .hero-image {
-  margin-top: 20px;
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-image img {
@@ -143,55 +169,40 @@ button:hover, .cta:hover, .hire-button:hover {
   border-radius: 50%;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   object-fit: cover;
-  opacity: 0;
-  transform: scale(0.8);
-  animation: fadeInProfile 1s ease-out forwards 0.5s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .cta {
-  background-color: var(--button-bg); /* Use theme variable */
-  color: var(--button-text); /* Use theme variable */
-  padding: 10px 20px;
-  font-size: 1rem;
+  display: inline-block;
+  background: linear-gradient(45deg, #00a8e8, #0077b6);
+  color: #ffffff;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
   border-radius: 5px;
   text-decoration: none;
-  transition: all 0.3s ease;
-  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .cta:hover {
-  background-color: var(--hover-bg); /* Use theme variable */
-  color: var(--hover-text); /* Use theme variable */
-}
-
-/* 🌟 Call to Action Button */
-.hero .cta {
-  background-color: #0056b3;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.hero .cta:hover {
-  background-color: #007acc;
-}
-
-/* 🌟 Profile Image */
-.hero-image img {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  object-fit: cover;
-  opacity: 0;
-  transform: scale(0.8);
-  animation: fadeInProfile 1s ease-out forwards 0.5s;
+  background: linear-gradient(45deg, #0077b6, #00a8e8);
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* 🌟 Animations */
+.hero {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -199,10 +210,23 @@ button:hover, .cta:hover, .hire-button:hover {
   }
 }
 
-@keyframes fadeInProfile {
-  to {
-    opacity: 1;
-    transform: scale(1);
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column; /* Stack text and image vertically on smaller screens */
+    gap: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem; /* Adjust heading size for smaller screens */
+  }
+
+  .hero p {
+    font-size: 1rem; /* Adjust paragraph size */
+  }
+
+  .hero-image img {
+    width: 200px;
+    height: 200px;
   }
 }
 /* 🌟 Navbar Styling */
@@ -450,13 +474,28 @@ button:hover, .cta:hover, .hire-button:hover {
 /* 🌟 Contact Section */
 .contact {
   padding: 100px 10%;
-  background-color: var(--background-color); /* Use theme variable */
-  color: var(--text-color); /* Use theme variable */
+  background-color: var(--background-color) !important; /* Force theme variable */
+  color: var(--text-color) !important; /* Force theme variable */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .contact h2 {
   font-size: 2.8rem;
   color: var(--text-color); /* Use theme variable */
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  color: var(--text-color); /* Use theme variable */
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-form {
@@ -465,95 +504,169 @@ button:hover, .cta:hover, .hire-button:hover {
   max-width: 500px;
   margin: auto;
   margin-top: 20px;
+  position: relative;
+  z-index: 1;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid var(--card-border); /* Use theme variable */
   background: var(--card-bg); /* Use theme variable */
   color: var(--text-color); /* Use theme variable */
-  border: 1px solid var(--card-border); /* Use theme variable */
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+  background: var(--hover-bg); /* Use theme variable */
+}
+
+.contact-form textarea {
+  height: 150px;
 }
 
 .contact-form button {
   background: var(--button-bg); /* Use theme variable */
   color: var(--button-text); /* Use theme variable */
+  padding: 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .contact-form button:hover {
   background: var(--hover-bg); /* Use theme variable */
   color: var(--hover-text); /* Use theme variable */
+  transform: scale(1.1);
 }
 
-/* 🌟 Dark Theme Specific Styling */
-[data-theme="dark"] .contact {
-  background-color: #2c2c2c; /* Dark gray background */
-  color: #e0e0e0; /* Light gray text */
+/* 🌟 Background Animation */
+.contact::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 119, 182, 0.2), transparent);
+  animation: rotateBackground 10s linear infinite;
+  z-index: 0;
 }
 
-[data-theme="dark"] .contact h2 {
-  color: #ffcc00; /* Vibrant yellow for headings */
+@keyframes rotateBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-[data-theme="dark"] .contact p {
-  color: #cccccc; /* Softer gray for paragraphs */
+/* 🌟 Input Focus Effect */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--button-bg); /* Use theme variable */
+  box-shadow: 0 0 10px rgba(0, 119, 182, 0.5);
 }
 
-[data-theme="dark"] .contact-form input, 
-[data-theme="dark"] .contact-form textarea {
-  background: #3a3a3a; /* Darker gray for input fields */
-  color: #e0e0e0; /* Light gray text */
-  border: 1px solid #555; /* Subtle border */
-}
+/* 🌟 Responsive Design */
+@media (max-width: 768px) {
+  .contact h2 {
+    font-size: 2.2rem;
+  }
 
-[data-theme="dark"] .contact-form input:hover, 
-[data-theme="dark"] .contact-form textarea:hover {
-  background: #444; /* Slightly lighter gray on hover */
-}
+  .contact p {
+    font-size: 1rem;
+  }
 
-[data-theme="dark"] .contact-form button {
-  background: #ffcc00; /* Vibrant yellow for buttons */
-  color: #2c2c2c; /* Dark text for contrast */
-}
-
-[data-theme="dark"] .contact-form button:hover {
-  background: #ffdd33; /* Lighter yellow on hover */
-  color: #1a1a1a; /* Darker text on hover */
+  .contact-form {
+    max-width: 100%;
+    padding: 0 20px;
+  }
 }
 /* 🌟 About Me Section */
 .about {
   padding: 100px 10%;
+  background-color: var(--background-color); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--background-color); /* Use theme variable */
-  color: var(--text-color); /* Use theme variable */
-  gap: 50px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.about-container {
+  display: flex;
   flex-wrap: wrap;
-  text-align: left;
-  transition: all 0.5s ease-in-out;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
 }
 
-.about h2 {
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
   font-size: 2.8rem;
+  margin-bottom: 20px;
   color: var(--text-color); /* Use theme variable */
-  margin-bottom: 15px;
 }
 
-.about p {
+.about-text p {
   font-size: 1.2rem;
+  margin-bottom: 20px;
   line-height: 1.6;
   color: var(--text-color); /* Use theme variable */
 }
 
+.about-text .cta {
+  display: inline-block;
+  background: var(--button-bg); /* Use theme variable */
+  color: var(--button-text); /* Use theme variable */
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.about-text .cta:hover {
+  background: var(--hover-bg); /* Use theme variable */
+  color: var(--hover-text); /* Use theme variable */
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .about-image img {
   width: 100%;
-  max-width: 500px;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.5s ease-in-out;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-image img:hover {
   transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* 🌟 Contact Section */
