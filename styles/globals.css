@@ -35,7 +35,7 @@ body {
   --card-bg: #ffffff; /* White card background */
   --card-border: #ddd; /* Subtle border */
   --hover-bg: #0056b3; /* Darker blue for hover */
-  --hover-text: #eaf0f3; /* Vibrant blue for hover */
+  --hover-text: #000707; /* Vibrant blue for hover */
   --link-color: #0077b6; /* Vibrant blue for links */
   --link-hover-color: #0056b3; /* Darker blue for link hover */
 }
