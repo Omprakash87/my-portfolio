@@ -128,7 +128,7 @@ button:hover, .cta:hover, .hire-button:hover {
 .hero-text {
   flex: 1;
   min-width: 300px;
-  text-align: left; /* Align text to the left for better readability */
+  text-align: center; /* Center-align text for better readability on mobile */
 }
 
 .hero h1 {
@@ -147,12 +147,6 @@ button:hover, .cta:hover, .hire-button:hover {
   color: var(--text-color); /* Use theme variable */
   margin-bottom: 20px;
   line-height: 1.6; /* Improve readability */
-}
-
-.hero-description {
-  font-size: 1rem;
-  color: #d1d1d1; /* Softer gray for description */
-  margin-bottom: 30px;
 }
 
 .hero-image {
@@ -177,43 +171,11 @@ button:hover, .cta:hover, .hire-button:hover {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
-.cta {
-  display: inline-block;
-  background: linear-gradient(45deg, #00a8e8, #0077b6);
-  color: #ffffff;
-  padding: 12px 25px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.cta:hover {
-  background: linear-gradient(45deg, #0077b6, #00a8e8);
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-}
-
-/* 🌟 Animations */
-.hero {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease-in-out forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* 🌟 Responsive Design for Mobile */
 @media (max-width: 768px) {
   .hero-content {
-    flex-direction: column; /* Stack text and image vertically on smaller screens */
-    gap: 20px;
+    flex-direction: column; /* Stack text and image vertically */
+    gap: 20px; /* Reduce spacing for smaller screens */
   }
 
   .hero h1 {
@@ -225,8 +187,23 @@ button:hover, .cta:hover, .hire-button:hover {
   }
 
   .hero-image img {
-    width: 200px;
+    width: 200px; /* Reduce image size */
     height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem; /* Further reduce heading size for very small screens */
+  }
+
+  .hero p {
+    font-size: 0.9rem; /* Further reduce paragraph size */
+  }
+
+  .hero-image img {
+    width: 150px; /* Further reduce image size */
+    height: 150px;
   }
 }
 /* 🌟 Navbar Styling */
@@ -926,9 +903,15 @@ html {
   color: #ffcc00; /* Slightly darker gold on hover */
 }
 
+/* 🌟 Global Heading Hover Effect */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-color); /* Use theme variable */
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  color: var(--hover-text); /* Change color on hover */
 }
 
 p {
