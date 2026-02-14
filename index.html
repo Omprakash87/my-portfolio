@@ -5,40 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Omprakash Indla - Graduate student in ECE focusing on hardware, embedded systems, and FPGA; seeking Hardware Engineering Internship for system integration & validation."
+    content="Omprakash Indla - Embedded Systems Engineer. Graduate student in ECE with experience in embedded electronics, real-time firmware, HIL testing, and automotive/industrial applications."
   />
   <meta
     name="keywords"
-    content="Electrical Engineering, Computer Engineering, Hardware Design, Embedded Systems, FPGA, AI/ML, UAB"
+    content="Embedded Systems, Electrical Engineering, Computer Engineering, FreeRTOS, ARM Cortex-M, CAN, HIL Testing, MATLAB, Python, UAB"
   />
   <meta name="author" content="Omprakash Indla" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://omprakash-indla.netlify.app/" />
-  <meta property="og:title" content="Omprakash Indla - Electrical & Computer Engineer" />
+  <meta property="og:title" content="Omprakash Indla - Embedded Systems Engineer" />
   <meta
     property="og:description"
-    content="Graduate student in ECE focusing on hardware, embedded systems, and FPGA; seeking Hardware Engineering Internship for system integration & validation."
+    content="Graduate student in ECE with experience in embedded electronics, sensor-driven systems, real-time firmware, and hardware validation for safety-critical automotive and industrial applications."
   />
   <meta property="og:image" content="https://omprakash-indla.netlify.app/assets/og-cover.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://omprakash-indla.netlify.app/" />
-  <meta name="twitter:title" content="Omprakash Indla - Electrical & Computer Engineer" />
+  <meta name="twitter:title" content="Omprakash Indla - Embedded Systems Engineer" />
   <meta
     name="twitter:description"
-    content="Graduate student in ECE focusing on hardware, embedded systems, and FPGA; seeking Hardware Engineering Internship for system integration & validation."
+    content="Graduate student in ECE with experience in embedded electronics, real-time firmware, and HIL testing for automotive and industrial applications."
   />
   <meta name="twitter:image" content="https://omprakash-indla.netlify.app/assets/og-cover.png" />
 
   <link rel="canonical" href="https://omprakash-indla.netlify.app/" />
-  <title>Omprakash Indla - Electrical & Computer Engineer</title>
+  <title>Omprakash Indla - Embedded Systems Engineer</title>
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
 
-  <!-- Your CSS (cache-busted & relative path so it works on GitHub Pages/Netlify) -->
-  <link rel="stylesheet" href="./assets/styles.css?v=20251024" />
+  <link rel="stylesheet" href="./assets/styles.css?v=20250218" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -47,7 +49,7 @@
     "@type": "Person",
     "name": "Omprakash Indla",
     "email": "oindla@uab.edu",
-    "jobTitle": "Graduate Student, ECE",
+    "jobTitle": "Embedded Systems Engineer",
     "sameAs": "https://www.linkedin.com/in/omprakash-indla-aa7025266/",
     "address": {
       "@type": "PostalAddress",
@@ -60,29 +62,24 @@
   </script>
 </head>
 <body>
-  <!-- Skip link -->
   <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- Navbar -->
-  <header class="navbar" id="navbar">
-    <nav class="nav-container">
+  <header class="navbar" id="navbar" role="banner">
+    <nav class="nav-container" aria-label="Main">
       <div class="nav-logo">
         <a href="#home" class="logo-link">OI</a>
       </div>
-      <ul class="nav-menu" id="nav-menu">
+      <ul class="nav-menu" id="nav-menu" role="menubar">
         <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
         <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
         <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
         <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
         <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-        <li class="nav-item"><a href="#research" class="nav-link">Research</a></li>
-        <li class="nav-item"><a href="#achievements" class="nav-link">Achievements</a></li>
         <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-cta">
-        <!-- Avoid curly apostrophes in filenames on the web -->
-        <a href="./assets/Om’s resume.pdf" class="btn btn-primary" download>Download Résumé</a>
+        <a href="./assets/Om%27s%20resume.pdf" class="btn btn-primary" download>Download Résumé</a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
@@ -90,367 +87,253 @@
     </nav>
   </header>
 
-  <!-- Main -->
   <main id="main">
-    <!-- Hero -->
     <section id="home" class="hero">
       <div class="hero-background" id="hero-background"></div>
       <div class="hero-content">
+        <img src="./assets/om.jpeg" alt="Omprakash Indla" class="hero-photo hero-reveal" width="160" height="160" />
         <div class="hero-text">
-          <h1 class="hero-name">Omprakash Indla <span class="hero-nickname">(Om)</span></h1>
-          <p class="hero-title">Electrical & Computer Engineering @ UAB — Hardware/Embedded & AI/ML</p>
-          <div class="hero-cta">
+          <h1 class="hero-name hero-reveal">Omprakash Indla <span class="hero-nickname">(Om)</span></h1>
+          <p class="hero-title hero-reveal">Embedded Systems Engineer — Real-time firmware, HIL testing & hardware validation</p>
+          <div class="hero-cta hero-reveal">
             <a href="#projects" class="btn btn-primary">View Projects</a>
             <a href="#contact" class="btn btn-ghost">Contact Me</a>
           </div>
-          <div class="hero-links">
+          <div class="hero-links hero-reveal">
             <span class="location">📍 Birmingham, AL</span>
-            <a href="https://www.linkedin.com/in/omprakash-indla-aa7025266/" class="social-link">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/omprakash-indla-aa7025266/" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
             <a href="mailto:oindla@uab.edu" class="social-link">Email</a>
-            <a href="tel:+12058737963" class="social-link">Phone</a>
+            <a href="tel:+12054222685" class="social-link">Phone</a>
           </div>
+          <a href="#about" class="hero-scroll-indicator hero-reveal" aria-label="Scroll to content">
+            <span class="hero-scroll-dot"></span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- About -->
+    <div class="section-divider" data-animate="divider" aria-hidden="true"><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span></div>
     <section id="about" class="section">
       <div class="container">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title reveal-up">About Me</h2>
         <div class="about-content">
-          <p class="about-text">
-            I'm an Electrical & Computer Engineer at UAB, pursuing my M.S. in Electrical & Computer Engineering with an expected graduation in May 2026. My passion lies in hardware design, embedded systems, FPGA development, and AI/ML applications. I have hands-on experience in system integration and validation, with a keen interest in design craft honed through my role as Graphic Design Editor at UAB Student Media.
+          <p class="about-text reveal-up">
+            I am a graduate student in Electrical & Computer Engineering with practical experience in embedded electronics, sensor-driven systems, real-time firmware, and hardware validation. I have solid experience in electronic control systems, data collection, HIL-style testing, and MATLAB-driven data analysis, with expertise in assisting safety-critical automotive and industrial applications.
           </p>
-          <p class="about-text">
-            My journey spans from designing electronic systems for reliability and safety at Marriott International to developing automation solutions at GTT Communications. I'm driven by the intersection of hardware and software, always seeking to create innovative solutions that bridge the gap between embedded systems and intelligent applications.
+          <p class="about-text reveal-up">
+            I am enthusiastic about applying theoretical knowledge from the classroom to practical engineering solutions through evaluation, verification, and documentation.
           </p>
         </div>
       </div>
     </section>
-
-    <!-- Skills -->
-    <section id="skills" class="section">
+    <div class="section-divider" data-animate="divider" aria-hidden="true"><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span></div>
+    <section id="skills" class="section skills-section">
       <div class="container">
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title reveal-up">Technical Skills</h2>
         <div class="skills-grid">
-          <div class="skill-card">
-            <div class="skill-icon">🔧</div>
-            <h3 class="skill-title">Hardware Design</h3>
+          <div class="skill-card reveal-card">
+            <span class="skill-icon-wrap" aria-hidden="true"><span class="skill-icon">⚙️</span></span>
+            <h3 class="skill-title">RTOS & Microcontrollers</h3>
             <div class="skill-tags">
-              <span class="tag">Digital & Analog Circuits</span>
-              <span class="tag">PCB Layout (Altium, KiCad)</span>
-              <span class="tag">Sensors & Actuators</span>
-              <span class="tag">Signal Integrity</span>
-              <span class="tag">Hardware Debugging</span>
+              <span class="tag">FreeRTOS</span>
+              <span class="tag">ARM Cortex-M</span>
+              <span class="tag">STM32</span>
+              <span class="tag">ESP32</span>
             </div>
           </div>
-          <div class="skill-card">
-            <div class="skill-icon">⚡</div>
-            <h3 class="skill-title">Embedded Systems</h3>
+          <div class="skill-card reveal-card">
+            <span class="skill-icon-wrap" aria-hidden="true"><span class="skill-icon">⚡</span></span>
+            <h3 class="skill-title">Embedded Development</h3>
             <div class="skill-tags">
-              <span class="tag">Embedded C/C++</span>
-              <span class="tag">ARM, STM32</span>
-              <span class="tag">Arduino, Raspberry Pi</span>
-              <span class="tag">RTOS</span>
-              <span class="tag">SPI/I2C/UART</span>
-              <span class="tag">Firmware</span>
+              <span class="tag">Embedded C & C++</span>
+              <span class="tag">Sensor implementation & calibration</span>
+              <span class="tag">ADC & DMA</span>
+              <span class="tag">Hardware-software integration</span>
             </div>
           </div>
-          <div class="skill-card">
-            <div class="skill-icon">🤖</div>
-            <h3 class="skill-title">AI/ML</h3>
+          <div class="skill-card reveal-card">
+            <span class="skill-icon-wrap" aria-hidden="true"><span class="skill-icon">🔌</span></span>
+            <h3 class="skill-title">Communication & Interfaces</h3>
             <div class="skill-tags">
-              <span class="tag">Python</span>
-              <span class="tag">TensorFlow</span>
-              <span class="tag">PyTorch</span>
-              <span class="tag">Scikit-learn</span>
-              <span class="tag">TinyML</span>
-              <span class="tag">OpenCV</span>
+              <span class="tag">CAN</span>
+              <span class="tag">UART</span>
+              <span class="tag">SPI</span>
+              <span class="tag">I2C</span>
             </div>
           </div>
-          <div class="skill-card">
-            <div class="skill-icon">💻</div>
-            <h3 class="skill-title">Software & Tools</h3>
+          <div class="skill-card reveal-card">
+            <span class="skill-icon-wrap" aria-hidden="true"><span class="skill-icon">🔬</span></span>
+            <h3 class="skill-title">Testing & Validation</h3>
             <div class="skill-tags">
-              <span class="tag">MATLAB/Simulink</span>
-              <span class="tag">Verilog/VHDL</span>
-              <span class="tag">Vivado, Quartus</span>
-              <span class="tag">LTspice</span>
-              <span class="tag">Git/GitHub</span>
-              <span class="tag">Jupyter</span>
+              <span class="tag">Hardware-in-loop (HIL) testing</span>
+              <span class="tag">System validation & debugging</span>
+              <span class="tag">Electronics lab tools</span>
             </div>
           </div>
-          <div class="skill-card">
-            <div class="skill-icon">🔬</div>
-            <h3 class="skill-title">Testing & Simulation</h3>
+          <div class="skill-card reveal-card">
+            <span class="skill-icon-wrap" aria-hidden="true"><span class="skill-icon">💻</span></span>
+            <h3 class="skill-title">Software & Analysis</h3>
             <div class="skill-tags">
-              <span class="tag">Oscilloscope</span>
-              <span class="tag">Logic Analyzer</span>
-              <span class="tag">Multimeter</span>
-              <span class="tag">NI LabVIEW</span>
-              <span class="tag">HIL</span>
-              <span class="tag">System Validation</span>
+              <span class="tag">MATLAB data analysis</span>
+              <span class="tag">Python scripting & automation</span>
             </div>
           </div>
-          <div class="skill-card">
-            <div class="skill-icon">🖥️</div>
-            <h3 class="skill-title">Operating Systems</h3>
+          <div class="skill-card reveal-card">
+            <span class="skill-icon-wrap" aria-hidden="true"><span class="skill-icon">📄</span></span>
+            <h3 class="skill-title">Documentation</h3>
             <div class="skill-tags">
-              <span class="tag">Linux</span>
-              <span class="tag">Embedded Linux</span>
-              <span class="tag">macOS</span>
-              <span class="tag">Windows</span>
+              <span class="tag">Technical documentation</span>
+              <span class="tag">CAN troubleshooting</span>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Experience -->
+    <div class="section-divider" data-animate="divider" aria-hidden="true"><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span></div>
     <section id="experience" class="section">
       <div class="container">
-        <h2 class="section-title">Experience</h2>
+        <h2 class="section-title reveal-up">Professional Experience</h2>
         <div class="experience-timeline">
-          <div class="experience-item">
+          <div class="experience-timeline-progress" data-timeline-fill aria-hidden="true"></div>
+          <div class="experience-item reveal-up">
             <div class="experience-date">Jul 2023 – May 2024</div>
             <div class="experience-content">
               <h3 class="experience-title">Hardware Engineer</h3>
-              <h4 class="experience-company">Engineering Voyager, Marriott International</h4>
+              <h4 class="experience-company">Engineering Voyager, Marriott International · Mumbai, India</h4>
               <ul class="experience-details">
-                <li>Designed and maintained electronic systems for reliability and safety</li>
-                <li>Calibrated sensor-based HVAC control systems → improved energy efficiency</li>
-                <li>Conducted diagnostics and root cause analysis → increased uptime and efficiency</li>
-                <li>Authored preventive-maintenance workflows for predictive monitoring</li>
+                <li>Assisted in the operation and validation of mechanical and electrical systems throughout the hotel, including HVAC units, chilled water systems, pumps, VFDs, and building automation controls to ensure stable environmental performance and uphold guest comfort standards.</li>
+                <li>Enhanced the reliability of HVAC electronic controls by boosting system uptime by 10% through sensor recalibration, signal integrity checks, and validation of closed-loop control under different load and occupancy scenarios.</li>
+                <li>Conducted systematic diagnostics on sensors for temperature, pressure, and airflow; confirmed the behavior of analog/digital signals, actuator responses, and the stability of control setpoints to guarantee reliable system performance.</li>
+                <li>Reviewed Building Automation System (BAS) trend logs and utility metrics; created Python-based data analysis and visualization tools to identify control drift, unusual cycling, and inefficiencies, leading to a 15% decrease in energy usage.</li>
+                <li>Performed root-cause analysis of electrical and control issues, documenting edge-case behaviors and applying corrective measures in accordance with preventive maintenance and Marriott engineering standards.</li>
+                <li>Contributed to commissioning, validating system tests, and coordinating with vendors during equipment upgrades and modifications to the control system.</li>
+                <li>Executed Lockout/Tagout (LOTO) safety measures and organized documentation methods to guarantee compliance, accountability, and operational dependability.</li>
               </ul>
             </div>
           </div>
-          <div class="experience-item">
+          <div class="experience-item reveal-up">
             <div class="experience-date">Jan 2023 – Jun 2023</div>
             <div class="experience-content">
               <h3 class="experience-title">Software Engineer Intern</h3>
-              <h4 class="experience-company">GTT Communications</h4>
+              <h4 class="experience-company">GTT Communications · Pune, India</h4>
               <ul class="experience-details">
-                <li>Developed Python automation and REST integrations → ~20% better monitoring efficiency</li>
-                <li>Performed hardware/software interface testing for embedded communication modules</li>
-                <li>Validated firmware updates across multi-vendor platforms</li>
-              </ul>
-            </div>
-          </div>
-          <div class="experience-item">
-            <div class="experience-date">Aug 2024 – Present</div>
-            <div class="experience-content">
-              <h3 class="experience-title">Graphic Designer</h3>
-              <h4 class="experience-company">Student Media (Kaleidoscope), UAB</h4>
-              <ul class="experience-details">
-                <li>Created digital and print assets using Adobe CC and Figma</li>
-                <li>Led brand consistency initiatives across student media platforms</li>
+                <li>By developing Python-driven automation tools for log aggregation, anomaly detection, and performance trend analysis across distributed network services, the efficacy of system monitoring increased by 20%.</li>
+                <li>To reduce the amount of human troubleshooting, structured log parsing and warning systems were developed to identify latency increases, packet losses, and anomalies in resource utilization.</li>
+                <li>By running regression test suites and assessing system-level performance under simulated load situations, I helped verify firmware and hardware-software integration.</li>
+                <li>Developed and put into practice structured test cases that adhered to functional specifications, recording problems, their root causes, and the results of solutions to improve traceability and release assurance.</li>
+                <li>To increase system visibility during validation and speed up issue discovery and inter-team debugging collaboration, simplified diagnostic and telemetry tools were developed.</li>
+                <li>Participated in performance benchmarking projects that assessed response time, memory use, and throughput under pressure.</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Projects -->
+    <div class="section-divider" data-animate="divider" aria-hidden="true"><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span></div>
     <section id="projects" class="section">
       <div class="container">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title reveal-up">Projects</h2>
         <div class="projects-grid">
-          <div class="project-card">
-            <h3 class="project-title">Smart Drone for Precision Farming</h3>
-            <p class="project-description">AI-enabled drone with embedded controllers, GPS, and TensorFlow for real-time crop monitoring and analysis.</p>
+          <div class="project-card reveal-card">
+            <h3 class="project-title">Real-Time Motor Control & Safety-Critical RTOS Simulator</h3>
+            <p class="project-tech">Embedded C, FreeRTOS (Win32), ARM Cortex-M Architecture</p>
+            <ul class="project-bullets">
+              <li>Built a deterministic real-time closed-loop motor control simulator with interrupt-driven timing and priority-based task management using FreeRTOS.</li>
+              <li>Implemented PID control with fixed-point arithmetic and guaranteed finite execution times.</li>
+              <li>Developed fault detection including secure state transitions, task starvation oversight, overcurrent, and sensor malfunction.</li>
+              <li>Developed recovery and monitoring oversight algorithms to simulate runtime error and brownout situations; performed worst-case execution and timing evaluation for consistent multitasking behavior.</li>
+            </ul>
             <div class="project-tags">
-              <span class="tag">Embedded</span>
-              <span class="tag">AI/ML</span>
-              <span class="tag">Computer Vision</span>
+              <span class="tag">FreeRTOS</span>
+              <span class="tag">ARM Cortex-M</span>
+              <span class="tag">Embedded C</span>
+              <span class="tag">PID</span>
             </div>
-            <a href="#" class="project-link">Learn more →</a>
           </div>
 
-          <div class="project-card">
-            <h3 class="project-title">IoT Smart Energy Monitor</h3>
-            <p class="project-description">ESP32-based power tracking system with custom PCB design and MQTT cloud integration for real-time energy monitoring.</p>
+          <div class="project-card reveal-card">
+            <h3 class="project-title">Automotive CAN Bus Network & Fault Injection Framework</h3>
+            <p class="project-tech">Embedded C, Python, Linux SocketCAN</p>
+            <ul class="project-bullets">
+              <li>Designed and implemented a multi-node CAN network simulator that replicates ECU behavior through bus load analysis, message priority, and arbitration.</li>
+              <li>Added deterministic retransmission logic, bus-off recovery, and error frame creation.</li>
+              <li>Developed a Python diagnostic tool for real-time message decoding, logging, and latency monitoring.</li>
+              <li>Built an automated fault injection system to assess resilience under severe bus congestion and malformed frames.</li>
+              <li>Performed protocol-level validation in accordance with automobile electronic system standards.</li>
+            </ul>
             <div class="project-tags">
-              <span class="tag">IoT</span>
-              <span class="tag">PCB</span>
-              <span class="tag">Firmware</span>
+              <span class="tag">CAN</span>
+              <span class="tag">Python</span>
+              <span class="tag">SocketCAN</span>
+              <span class="tag">Embedded C</span>
             </div>
-            <a href="#" class="project-link">Learn more →</a>
           </div>
 
-          <div class="project-card">
-            <h3 class="project-title">EEG Epilepsy Detection</h3>
-            <p class="project-description">EMD + CNN implementation using MATLAB/Python achieving 95% accuracy in epilepsy detection from EEG signals.</p>
+          <div class="project-card reveal-card">
+            <h3 class="project-title">Lithium-Ion Battery Digital Twin & State Estimation Engine</h3>
+            <p class="project-tech">Embedded C, FreeRTOS, Python Visualization</p>
+            <ul class="project-bullets">
+              <li>Developed a multi-node CAN network simulator simulating ECU operations, including bus load assessment, message prioritizing, and arbitration.</li>
+              <li>Implemented predictable retransmission techniques, error frame generation, and bus-off recovery algorithms.</li>
+              <li>Developed a Python diagnostic tool for real-time message decoding, latency measurement, and logging.</li>
+              <li>Built an automated fault injection mechanism to evaluate robustness against substantial bus congestion and malformed frames.</li>
+              <li>Performed protocol-level validation in compliance with requirements for automotive electronic systems.</li>
+            </ul>
             <div class="project-tags">
-              <span class="tag">Signal Processing</span>
-              <span class="tag">Machine Learning</span>
+              <span class="tag">FreeRTOS</span>
+              <span class="tag">Python</span>
+              <span class="tag">CAN</span>
+              <span class="tag">Embedded C</span>
             </div>
-            <a href="#" class="project-link">Learn more →</a>
-          </div>
-
-          <div class="project-card">
-            <h3 class="project-title">Fixlytiq SaaS Platform</h3>
-            <p class="project-description">Full-stack repair management platform built with React Native, Node.js, and Supabase for comprehensive service tracking.</p>
-            <div class="project-tags">
-              <span class="tag">SaaS</span>
-              <span class="tag">Mobile</span>
-              <span class="tag">Backend</span>
-            </div>
-            <a href="#" class="project-link">Learn more →</a>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Education -->
+    <div class="section-divider" data-animate="divider" aria-hidden="true"><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span></div>
     <section id="education" class="section">
       <div class="container">
-        <h2 class="section-title">Education & Coursework</h2>
+        <h2 class="section-title reveal-up">Education</h2>
         <div class="education-content">
-          <div class="education-item">
-            <h3 class="education-degree">M.S. Electrical & Computer Engineering</h3>
+          <div class="education-item reveal-up">
+            <h3 class="education-degree">Master's Degree — Electrical & Computer Engineering</h3>
             <h4 class="education-school">University of Alabama at Birmingham</h4>
-            <p class="education-date">Expected May 2026</p>
-            <div class="coursework">
-              <h5>Relevant Coursework:</h5>
-              <div class="coursework-tags">
-                <span class="tag">Embedded Systems Design</span>
-                <span class="tag">Digital System Design</span>
-                <span class="tag">Machine Learning</span>
-                <span class="tag">AI</span>
-                <span class="tag">Control Systems</span>
-                <span class="tag">Computer Architecture</span>
-                <span class="tag">FPGA Design</span>
-                <span class="tag">Signal Processing</span>
-                <span class="tag">Software Engineering</span>
-                <span class="tag">Data Structures & Algorithms</span>
-              </div>
-            </div>
+            <p class="education-date">2024 – 2026</p>
           </div>
-
-          <div class="education-item">
-            <h3 class="education-degree">B.E. Electronics & Telecommunication</h3>
+          <div class="education-item reveal-up">
+            <h3 class="education-degree">Bachelor's Degree — Electronics and Telecommunication Engineering</h3>
             <h4 class="education-school">Symbiosis Institute of Technology</h4>
-            <p class="education-date">2019–2023</p>
+            <p class="education-date">2019 – 2023</p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Research -->
-    <section id="research" class="section">
-      <div class="container">
-        <h2 class="section-title">Research</h2>
-        <div class="research-content">
-          <article class="research-item">
-            <h3 class="research-title">Multifold Fusion Attention Variant for Emotion Recognition</h3>
-            <p class="research-description">
-              Developed an end-to-end framework that processes raw multimodal data without feature preprocessing, addressing challenges in emotion recognition for real-world applications including AI, healthcare, and human-computer interaction.
-            </p>
-            <div class="research-details">
-              <div class="research-highlights">
-                <h4>Key Contributions:</h4>
-                <ul class="research-list">
-                  <li>Novel attention-based intermediate fusion mechanism</li>
-                  <li>Dynamic modality weighting for adaptive data quality handling</li>
-                  <li>End-to-end processing of raw audio, video, and EEG data</li>
-                  <li>Captures both short- and long-range dependencies</li>
-                </ul>
-              </div>
-              <div class="research-results">
-                <h4>Results:</h4>
-                <div class="results-grid">
-                  <div class="result-item">
-                    <span class="result-metric">91.2%</span>
-                    <span class="result-label">Accuracy on EAV Dataset</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-metric">7.39%</span>
-                    <span class="result-label">Improvement over TransNet</span>
-                  </div>
-                </div>
-              </div>
-              <div class="research-technologies">
-                <h4>Technologies:</h4>
-                <div class="tech-tags">
-                  <span class="tag">Deep Learning</span>
-                  <span class="tag">Attention Mechanisms</span>
-                  <span class="tag">Multimodal Fusion</span>
-                  <span class="tag">Emotion Recognition</span>
-                  <span class="tag">EEG Processing</span>
-                  <span class="tag">Computer Vision</span>
-                  <span class="tag">Audio Processing</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Achievements -->
-    <section id="achievements" class="section">
-      <div class="container">
-        <h2 class="section-title">Achievements & Leadership</h2>
-        <div class="achievements-grid">
-          <div class="achievement-card">
-            <h3 class="achievement-title">Student Media Leadership</h3>
-            <p class="achievement-description">Directed UAB Student Media teams → +40% engagement</p>
-          </div>
-          <div class="achievement-card">
-            <h3 class="achievement-title">Hardware Optimization</h3>
-            <p class="achievement-description">Led hardware optimization at Marriott to improve efficiency</p>
-          </div>
-          <div class="achievement-card">
-            <h3 class="achievement-title">Tech Innovation Finalist</h3>
-            <p class="achievement-description">Top 5 Finalist — UAB Tech Innovation Hackathon (2023)</p>
-          </div>
-          <div class="achievement-card">
-            <h3 class="achievement-title">Outstanding Contributor</h3>
-            <p class="achievement-description">Outstanding Student Media Contributor Award (2024)</p>
-          </div>
-        </div>
-
-        <div class="extracurriculars">
-          <h3 class="extracurriculars-title">Extracurriculars</h3>
-          <ul class="extracurriculars-list">
-            <li>Graphic Design Editor — UAB Kaleidoscope</li>
-            <li>Tech & Innovation Club — built IoT/AI prototypes</li>
-            <li>Volunteer — UAB Engineering Expo mentor</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
+    <div class="section-divider" data-animate="divider" aria-hidden="true"><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span><span class="section-divider-dot"></span></div>
     <section id="contact" class="section">
       <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
+        <h2 class="section-title reveal-up">Get In Touch</h2>
         <div class="contact-content">
-          <div class="contact-info">
-            <p class="contact-description">Ready to collaborate on innovative hardware and embedded systems projects? Let's connect!</p>
+          <div class="contact-info reveal-up">
+            <p class="contact-description">Interested in embedded systems, real-time firmware, or hardware validation? Let's connect.</p>
             <div class="contact-details">
               <a href="mailto:oindla@uab.edu" class="contact-link">📧 oindla@uab.edu</a>
-              <a href="tel:+12058737963" class="contact-link">📞 +1 (205) 873-7963</a>
+              <a href="tel:+12054222685" class="contact-link">📞 (205) 422-2685</a>
+              <span class="contact-link">📍 Birmingham, AL</span>
             </div>
           </div>
 
-          <form class="contact-form" id="contact-form">
+          <form class="contact-form reveal-up" id="contact-form">
             <div class="form-group">
               <label for="name" class="form-label">Name</label>
               <input type="text" id="name" name="name" class="form-input" required />
             </div>
-
             <div class="form-group">
               <label for="email" class="form-label">Email</label>
               <input type="email" id="email" name="email" class="form-input" required />
             </div>
-
             <div class="form-group">
               <label for="message" class="form-label">Message</label>
               <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
             </div>
-
             <button type="submit" class="btn btn-primary form-submit">Send Message</button>
           </form>
         </div>
@@ -458,11 +341,18 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <p class="footer-copyright">© 2024 Omprakash Indla. All rights reserved.</p>
+  <footer class="footer" role="contentinfo">
+    <div class="footer-cta">
+      <div class="container">
+        <div class="footer-cta-links">
+          <a href="#contact" class="btn btn-ghost">Contact</a>
+          <a href="./assets/Om%27s%20resume.pdf" class="btn btn-primary" download>Download Résumé</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copyright">© 2025 Omprakash Indla. All rights reserved.</p>
         <div class="footer-links">
           <a href="#home" class="footer-link">Home</a>
           <a href="#about" class="footer-link">About</a>
@@ -472,16 +362,16 @@
     </div>
   </footer>
 
-  <!-- Back to top -->
   <button class="back-to-top" id="back-to-top" aria-label="Back to top">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="m18 15-6-6-6 6"/>
     </svg>
   </button>
 
-  <!-- Toast -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="./assets/script.js"></script>
 </body>
 </html>
