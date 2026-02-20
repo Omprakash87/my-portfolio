@@ -17,6 +17,7 @@ const prefersReducedMotion = () =>
   if (!video) return;
   video.muted = true;
   video.playsInline = true;
+  video.setAttribute('muted', '');
   if (prefersReducedMotion()) {
     video.pause();
     video.style.display = 'none';
@@ -27,6 +28,9 @@ const prefersReducedMotion = () =>
   };
   play();
   video.addEventListener('loadeddata', play);
+  video.addEventListener('canplay', play);
+  if (document.readyState === 'complete') play();
+  else window.addEventListener('load', play);
 })();
 
 /* ——— GSAP: context + hero timeline, scroll reveal, dividers, project reveal, cleanup ——— */
