@@ -62,6 +62,9 @@
   </script>
 </head>
 <body>
+  <video class="bg-video" autoplay muted loop playsinline aria-hidden="true">
+    <source src="./assets/hero-bg.mp4" type="video/mp4" />
+  </video>
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <header class="navbar" id="navbar" role="banner">
@@ -91,10 +94,11 @@
     <section id="home" class="hero">
       <div class="hero-background" id="hero-background"></div>
       <div class="hero-content">
-        <img src="./assets/om.jpeg" alt="Omprakash Indla" class="hero-photo hero-reveal" width="160" height="160" />
+        <div class="hero-photo-wrap"><img src="./assets/om.jpeg" alt="Omprakash Indla" class="hero-photo hero-reveal" width="160" height="160" /></div>
         <div class="hero-text">
+          <p class="hero-label hero-reveal">Embedded Systems Engineer</p>
           <h1 class="hero-name hero-reveal">Omprakash Indla <span class="hero-nickname">(Om)</span></h1>
-          <p class="hero-title hero-reveal">Embedded Systems Engineer — Real-time firmware, HIL testing & hardware validation</p>
+          <p class="hero-title hero-reveal">Real-time firmware, HIL testing & hardware validation</p>
           <div class="hero-cta hero-reveal">
             <a href="#projects" class="btn btn-primary">View Projects</a>
             <a href="#contact" class="btn btn-ghost">Contact Me</a>
@@ -106,6 +110,7 @@
             <a href="tel:+12054222685" class="social-link">Phone</a>
           </div>
           <a href="#about" class="hero-scroll-indicator hero-reveal" aria-label="Scroll to content">
+            <span class="hero-scroll-line" aria-hidden="true"></span>
             <span class="hero-scroll-dot"></span>
           </a>
         </div>
@@ -193,14 +198,12 @@
     <section id="experience" class="section">
       <div class="container">
         <h2 class="section-title reveal-up">Professional Experience</h2>
-        <div class="experience-timeline">
-          <div class="experience-timeline-progress" data-timeline-fill aria-hidden="true"></div>
-          <div class="experience-item reveal-up">
+        <div class="experience-grid">
+          <article class="experience-card reveal-card">
             <div class="experience-date">Jul 2023 – May 2024</div>
-            <div class="experience-content">
-              <h3 class="experience-title">Hardware Engineer</h3>
-              <h4 class="experience-company">Engineering Voyager, Marriott International · Mumbai, India</h4>
-              <ul class="experience-details">
+            <h3 class="experience-title">Hardware Engineer</h3>
+            <h4 class="experience-company">Engineering Voyager, Marriott International · Mumbai, India</h4>
+            <ul class="experience-details">
                 <li>Assisted in the operation and validation of mechanical and electrical systems throughout the hotel, including HVAC units, chilled water systems, pumps, VFDs, and building automation controls to ensure stable environmental performance and uphold guest comfort standards.</li>
                 <li>Enhanced the reliability of HVAC electronic controls by boosting system uptime by 10% through sensor recalibration, signal integrity checks, and validation of closed-loop control under different load and occupancy scenarios.</li>
                 <li>Conducted systematic diagnostics on sensors for temperature, pressure, and airflow; confirmed the behavior of analog/digital signals, actuator responses, and the stability of control setpoints to guarantee reliable system performance.</li>
@@ -209,14 +212,12 @@
                 <li>Contributed to commissioning, validating system tests, and coordinating with vendors during equipment upgrades and modifications to the control system.</li>
                 <li>Executed Lockout/Tagout (LOTO) safety measures and organized documentation methods to guarantee compliance, accountability, and operational dependability.</li>
               </ul>
-            </div>
-          </div>
-          <div class="experience-item reveal-up">
+          </article>
+          <article class="experience-card reveal-card">
             <div class="experience-date">Jan 2023 – Jun 2023</div>
-            <div class="experience-content">
-              <h3 class="experience-title">Software Engineer Intern</h3>
-              <h4 class="experience-company">GTT Communications · Pune, India</h4>
-              <ul class="experience-details">
+            <h3 class="experience-title">Software Engineer Intern</h3>
+            <h4 class="experience-company">GTT Communications · Pune, India</h4>
+            <ul class="experience-details">
                 <li>By developing Python-driven automation tools for log aggregation, anomaly detection, and performance trend analysis across distributed network services, the efficacy of system monitoring increased by 20%.</li>
                 <li>To reduce the amount of human troubleshooting, structured log parsing and warning systems were developed to identify latency increases, packet losses, and anomalies in resource utilization.</li>
                 <li>By running regression test suites and assessing system-level performance under simulated load situations, I helped verify firmware and hardware-software integration.</li>
@@ -224,8 +225,7 @@
                 <li>To increase system visibility during validation and speed up issue discovery and inter-team debugging collaboration, simplified diagnostic and telemetry tools were developed.</li>
                 <li>Participated in performance benchmarking projects that assessed response time, memory use, and throughput under pressure.</li>
               </ul>
-            </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>

@@ -11,6 +11,24 @@ const toast = $('#toast');
 const prefersReducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/* ——— Hero background video (muted autoplay; pause if reduced motion) ——— */
+(function initHeroVideo() {
+  const video = document.querySelector('.bg-video');
+  if (!video) return;
+  video.muted = true;
+  video.playsInline = true;
+  if (prefersReducedMotion()) {
+    video.pause();
+    video.style.display = 'none';
+    return;
+  }
+  const play = () => {
+    video.play().catch(() => {});
+  };
+  play();
+  video.addEventListener('loadeddata', play);
+})();
+
 /* ——— GSAP: context + hero timeline, scroll reveal, dividers, project reveal, cleanup ——— */
 function initGSAP() {
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
@@ -107,21 +125,17 @@ function initGSAP() {
       });
     }
 
-    /* Experience items stagger */
-    reveal('#experience .experience-item', {
-      y: 0, x: -20, duration: 0.6, stagger: 0.1,
-      start: 'top 84%', trigger: '#experience .experience-timeline',
-    });
-
-    /* Experience timeline fill */
-    const timelineFill = $('[data-timeline-fill]');
-    if (timelineFill) {
-      gsap.fromTo(timelineFill, { scaleY: 0 }, {
-        scaleY: 1, ease: 'none',
-        scrollTrigger: {
-          trigger: '#experience .experience-timeline',
-          start: 'top 78%', end: 'bottom 22%', scrub: 0.8,
-        },
+    /* Experience cards: same reveal as project cards */
+    const experienceCards = $$('#experience .reveal-card');
+    if (experienceCards.length) {
+      gsap.set(experienceCards, { opacity: 0, y: 22 });
+      gsap.to(experienceCards, {
+        opacity: 1,
+        y: 0,
+        duration: 0.85,
+        stagger: 0.1,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: '#experience .experience-grid', start: 'top 84%', toggleActions: 'play none none none' },
       });
     }
 
