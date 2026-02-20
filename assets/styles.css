@@ -6,8 +6,9 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: clamp(14px, 2vw, 16px);
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 @media (max-width: 768px) {
   html { font-size: 15px; }
@@ -106,6 +107,9 @@ body {
   overflow-x: hidden;
   position: relative;
   text-shadow: var(--text-shadow);
+  min-height: 100vh;
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 /* Full-page background: video layer (behind everything) */
@@ -187,6 +191,7 @@ body::after {
    Layout: container, sections, dividers
    -------------------------------------------------------------------------- */
 .container {
+  width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-padding);
@@ -211,7 +216,12 @@ body::after {
   color: var(--accent);
   margin-bottom: var(--space-3);
 }
-#main { counter-reset: section 0; }
+#main {
+  counter-reset: section 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; vertical-align: middle; }
 
 /* Decorative divider row (dots) — balanced padding */
 .section-divider {
@@ -221,6 +231,8 @@ body::after {
   gap: var(--space-3);
   padding: var(--space-10) 0;
   opacity: 0;
+  width: 100%;
+  overflow: hidden;
 }
 .section-divider-dot {
   width: 5px;
@@ -456,7 +468,8 @@ p { margin-bottom: var(--space-4); color: var(--muted); }
 
 .hero-content {
   text-align: center;
-  max-width: 720px;
+  width: 100%;
+  max-width: min(720px, 100%);
   padding: 0 var(--space-8);
   position: relative;
   z-index: 1;
@@ -610,7 +623,8 @@ p { margin-bottom: var(--space-4); color: var(--muted); }
    About: stacked, short supporting text
    -------------------------------------------------------------------------- */
 .about-content {
-  max-width: var(--content-max);
+  width: 100%;
+  max-width: min(var(--content-max), 100%);
   margin: 0 auto;
   text-align: center;
   padding-top: var(--space-4);
@@ -661,7 +675,8 @@ p { margin-bottom: var(--space-4); color: var(--muted); }
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
   margin-top: var(--space-10);
-  max-width: 56rem;
+  width: 100%;
+  max-width: min(56rem, 100%);
   margin-left: auto;
   margin-right: auto;
   padding-top: var(--space-4);
@@ -828,7 +843,8 @@ p { margin-bottom: var(--space-4); color: var(--muted); }
   gap: var(--space-10);
   margin-top: var(--space-10);
   padding-top: var(--space-4);
-  max-width: var(--content-wide);
+  width: 100%;
+  max-width: min(var(--content-wide), 100%);
   margin-left: auto;
   margin-right: auto;
 }
@@ -917,7 +933,8 @@ p { margin-bottom: var(--space-4); color: var(--muted); }
   gap: var(--space-10);
   margin-top: var(--space-10);
   padding-top: var(--space-4);
-  max-width: var(--content-wide);
+  width: 100%;
+  max-width: min(var(--content-wide), 100%);
   margin-left: auto;
   margin-right: auto;
 }
@@ -974,7 +991,8 @@ p { margin-bottom: var(--space-4); color: var(--muted); }
    Education
    -------------------------------------------------------------------------- */
 .education-content {
-  max-width: var(--content-wide);
+  width: 100%;
+  max-width: min(var(--content-wide), 100%);
   margin: 0 auto;
   padding-top: var(--space-4);
 }
@@ -991,7 +1009,8 @@ p { margin-bottom: var(--space-4); color: var(--muted); }
    Contact
    -------------------------------------------------------------------------- */
 .contact-content {
-  max-width: var(--content-wide);
+  width: 100%;
+  max-width: min(var(--content-wide), 100%);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1182,26 +1201,15 @@ p { margin-bottom: var(--space-4); color: var(--muted); }
 .toast.show { transform: translateX(0); }
 
 /* --------------------------------------------------------------------------
-   Responsive: mobile premium
+   Responsive: tablet — hamburger nav so layout works on all screens
    -------------------------------------------------------------------------- */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 var(--container-padding-mobile);
-    padding-left: max(var(--container-padding-mobile), env(safe-area-inset-left));
-    padding-right: max(var(--container-padding-mobile), env(safe-area-inset-right));
-  }
-  .section { padding: var(--section-padding-y-mobile) 0; }
-  .nav-container {
-    padding: var(--space-4);
-    padding-left: max(var(--space-4), env(safe-area-inset-left));
-    padding-right: max(var(--space-4), env(safe-area-inset-right));
-  }
-  .navbar { padding-top: env(safe-area-inset-top); }
+@media (max-width: 992px) {
   .nav-menu {
     position: fixed;
     top: calc(65px + env(safe-area-inset-top, 0px));
     left: -100%;
     width: 100%;
+    max-width: 100vw;
     height: calc(100vh - 65px - env(safe-area-inset-top, 0px));
     background: var(--card);
     flex-direction: column;
@@ -1228,6 +1236,24 @@ p { margin-bottom: var(--space-4); color: var(--muted); }
   .nav-cta { display: none; }
   .nav-cta-mobile { display: block; border-bottom: none; margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--border); }
   .nav-cta-link { width: 100%; justify-content: center; min-height: 48px; }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive: mobile
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--container-padding-mobile);
+    padding-left: max(var(--container-padding-mobile), env(safe-area-inset-left));
+    padding-right: max(var(--container-padding-mobile), env(safe-area-inset-right));
+  }
+  .section { padding: var(--section-padding-y-mobile) 0; }
+  .nav-container {
+    padding: var(--space-4);
+    padding-left: max(var(--space-4), env(safe-area-inset-left));
+    padding-right: max(var(--space-4), env(safe-area-inset-right));
+  }
+  .navbar { padding-top: env(safe-area-inset-top); }
   .hero { padding-left: max(var(--space-8), env(safe-area-inset-left)); padding-right: max(var(--space-8), env(safe-area-inset-right)); }
   .hero-content { padding: 0 var(--space-4); }
   .hero-cta { flex-direction: column; align-items: stretch; gap: var(--space-3); }
@@ -1253,7 +1279,7 @@ p { margin-bottom: var(--space-4); color: var(--muted); }
   .experience-grid { gap: var(--space-6); }
   .experience-card { padding: var(--space-6); }
   .footer-cta { padding: var(--space-12) 0; }
-  .footer-cta-links { flex-direction: column; width: 100%; max-width: 320px; }
+  .footer-cta-links { flex-direction: column; width: 100%; max-width: min(320px, 100%); }
   .footer-cta-links .btn { width: 100%; min-height: 48px; }
   .footer-bottom .container { flex-direction: column; text-align: center; gap: var(--space-4); }
   .footer-links { justify-content: center; }
